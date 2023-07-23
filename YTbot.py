@@ -13,6 +13,7 @@ bot = telebot.TeleBot('YOUR_API_KEY')
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.send_message(message.chat.id, f'Hello <b>{message.from_user.first_name}</b>', parse_mode='html')
+    print(message.from_user.id + 'sent: ' + message.text) 
 
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
